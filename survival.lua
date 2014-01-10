@@ -84,7 +84,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
 
    -- Single
    { "1978", { "!target.debuff(118253)", "target.ttd >= 10", "!target.state.charm" }}, -- Serpent Sting if SS debuff is not present
-   { "3674", { "!target.debuff(3674)", "target.ttd >= 8"  }}, -- Black Arrow
+   { "3674", { "!target.debuff(3674)", "target.ttd >= 8", "!target.state.charm"  }}, -- Black Arrow
    { "77767", "target.debuff(118253).duration < 4" }, -- Cobra Shot if SS duration < 4 secs
    { "53301" }, -- Explosive Shot
    { "117051" }, -- Glaive Toss
