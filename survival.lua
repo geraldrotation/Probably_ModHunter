@@ -94,7 +94,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
       { "109260", { "!player.buff(109260)", "!player.moving" }}, -- Iron Hawk
       { "13165", { "!player.spell(109260).exists", "!player.buff(13165)", "!player.moving" }}, -- Hawk
    }, "toggle.aspect" },
-   --{ "1130", { "target.exists", "!target.debuff(1130).any" }, "target" }, -- Hunters Mark
+   { "1130", { "target.exists", "!target.debuff(1130).any", "@modHunter.HuntersMark()" }, "target" }, -- Hunters Mark
    { "82939", "modifier.lalt", "ground" }, -- Explosive Trap
    { "82948", "modifier.lalt", "ground" }, -- Snake Trap
    { "82941", "modifier.lalt", "ground" }, -- Ice Trap

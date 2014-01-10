@@ -1,4 +1,6 @@
 local modHunter = { }
+local modHunter.HMDelay = nil
+local modHunter.HMTargetGUID = nil
 
 modHunter.eventHandler = function(self, ...)
   local subEvent                = select(1, ...)
@@ -48,13 +50,13 @@ function modHunter.Landshark()
 end
 
 function modHunter.HuntersMark()
-   if not MyTargetDelay or UnitGUID("target") ~= MyTargetGUID and UnitGUID("target") ~= nil then
-      MyTargetGUID = UnitGUID("target")
-      MyTargetDelay = GetTime()
+   if not modHunter.HMDelay or UnitGUID("target") ~= modHunter.HMTargetGUID and UnitGUID("target") ~= nil then
+      modHunter.HMTargetGUID = UnitGUID("target")
+      modHunter.HMDelay = GetTime()
    end
-   if PQIprefix and MyTargetDelay and _G[PQIprefix.."HuntersMark_enable"] then
-      if _G[PQIprefix.."HuntersMark_value"] < GetTime() - MyTargetDelay then
-         MyTargetDelay = nil
+   if modHunter.HMDelay then
+      if 3 < GetTime() - modHunter.HMDelay then
+         modHunter.HMDelay = nil
          return true
       end
    end
