@@ -47,4 +47,17 @@ function modHunter.Landshark()
   end
 end
 
+function modHunter.HuntersMark()
+   if not MyTargetDelay or UnitGUID("target") ~= MyTargetGUID and UnitGUID("target") ~= nil then
+      MyTargetGUID = UnitGUID("target")
+      MyTargetDelay = GetTime()
+   end
+   if PQIprefix and MyTargetDelay and _G[PQIprefix.."HuntersMark_enable"] then
+      if _G[PQIprefix.."HuntersMark_value"] < GetTime() - MyTargetDelay then
+         MyTargetDelay = nil
+         return true
+      end
+   end
+end
+
 ProbablyEngine.library.register("modHunter", modHunter)
