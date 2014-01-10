@@ -18,8 +18,16 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
 
    { "109248" , "modifier.lcontrol", "ground" }, -- Binding Shot
 
+   -- Pre DPS Pause
+   { "pause", "target.debuff(Wyvern Sting).any" },
+   { "pause", "target.debuff(Scatter Shot).any" },
+   { "pause", "target.immune.all" },
+   { "pause", "target.status.disorient" },
+   { "pause", "target.status.incapacitate" },
+   { "pause", "target.status.sleep" },
+
    -- Serpent Sting on mouseover when they don't have the debuff already and the toggle is enabled
-   { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS" }, "mouseover" },
+   { "1979", { "!mouseover.debuff(118253)", "toggle.autoSS", "mouseover.exists", "mouseover.enemy", "mouseover.alive", "!mouseover.state.charm" }, "mouseover" },
 
    -- Interrupt(s)
    { "147362", "target.interruptAt(50)" }, -- Counter Shot at 50% cast time left
@@ -54,8 +62,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
       { "121818" }, -- Stampede
       { "131894" }, -- A Murder of Crows
       { "120697" }, -- Lynx Rush
-      -- TODO: How to track and handle Rabid which is a pet spell
-      --{ "Rabid", "player.spell(53401).exists" },
+      { "53401" }, -- Rabid
    }, "modifier.cooldowns" },
 
    -- Shared
@@ -71,7 +78,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    { "3045" }, -- Rapid Fire
    { "82692", { "player.buff(19615).count = 5", "!player.buff(34471)" }}, -- Focus Fire when at 5 stacks of frenzy and not under 'The Beast Within' buff from Beastial Wrath
    { "82726", "player.focus < 50" }, -- Fervor when under 50 focus
-   { "19801", "target.dispellable(19801)", "target" }, -- Tranquilizing Shot
+   { "19801", { "target.dispellable(19801)", "!target.state.charm" }, "target" }, -- Tranquilizing Shot
 
    -- AoE
    {{
@@ -82,7 +89,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    }, { "modifier.multitarget", "modifier.enemies >= 3" }, },
 
    -- Single
-   { "1978", "!target.debuff(118253)" }, -- Serpent Sting if SS debuff is not present
+   { "1978", { "!target.debuff(118253)", "target.ttd >= 10", "!target.state.charm" }}, -- Serpent Sting if SS debuff is not present
    { "77767", "target.debuff(118253).duration < 4" }, -- Cobra Shot if SS duration < 4 secs
    { "117051" }, -- Glaive Toss
    { "109259" }, -- Power Shot
@@ -92,6 +99,8 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
 },
 {
   -- Out of combat
+   { "pause", "modifier.lshift" },
+   { "pause","player.buff(5384)" }, -- Pause for Feign Death
    { "136", { "pet.health <= 90", "pet.exists", "!pet.dead", "!pet.buff(136)" }}, -- Mend Pet
    {{
       { "5118", { "player.moving", "!player.buff(5118)" }}, -- Cheetah

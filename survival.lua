@@ -26,7 +26,6 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    { "pause", "target.status.incapacitate" },
    { "pause", "target.status.sleep" },
 
-
    -- Serpent Sting on mouseover when they don't have the debuff already and the toggle is enabled
    { "1979", { "!mouseover.debuff(118253)", "toggle.autoSS", "mouseover.exists", "mouseover.enemy", "mouseover.alive", "!mouseover.state.charm" }, "mouseover" },
 
@@ -63,7 +62,6 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
       { "121818" }, -- Stampede
       { "131894" }, -- A Murder of Crows
       { "120697" }, -- Lynx Rush
-      -- TODO: How to track and handle Rabid which is a pet spell
       { "53401" }, -- Rabid
    }, "modifier.cooldowns" },
 
