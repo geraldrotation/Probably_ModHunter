@@ -1,0 +1,41 @@
+Features:
+Single Target / AoE (Multi-Shot with hotkey support for barrage)
+Several missing abilities from the included rotations were added
+Some clean-up of the priority order and conditions from the included rotations
+Engineering gloves usage is part of the rotation
+Stampede & AMoC is only cast when cooldowns is enabled
+Fervor is only cast when focus is below 50 instead of on cooldown
+Toggle button for automatic aspect switching while moving
+Automatic misdirect to focus or pet when target's threat is above a certain threshold
+Several of the concepts and routines from rootWind were incorporated into these rotations
+Multitarget mode will only engage AOE abilities when both the multitarget toggle is set and there are at least 3 active enemies
+Automatic tranq shot when the enemy is enraged/dispellable
+Automatic Master's Call when the player is rooted
+Pause rotation when in feign death
+Delayed interrupting: Don't attempt to interrupt until the spellcast is 50% complete
+Toggle to allow for automatic serpet sting on your current mouseover target whenever that target doesn't already have the serpent sting DOT/debuff
+Support for internatrional clients as all references are by spellID/itemID
+Revie Pet & Call Pet should work correctly 100% of the time
+
+
+Hotkeys:
+Left Shift - Pause
+Left Control - Binding Shot
+Left Alt - Explosive Trap
+Left Alt - Snake Trap
+Left Alt - Ice Trap
+
+Survival:
+Exhilaration when health below 50%
+Healthstone when below 40% health
+Master Healing Potion when below 40% health -- This is still broken when the potion is on a cooldown or shared cooldown
+
+Main Rotation:
+Basically following the Icy Veins suggested priority system
+
+To Do:
+Figure out how to share common blocks of code between the specializations so as to not duplicate code
+Automatic tranq shot when the enemy is enraged & not a player mind-controlled
+Implement G52 Landshark usage as part of cooldowns
+Figure out how to get Healing Potions & Virmen's Bite potions to work 100% when potions are already on cooldown
+More cleanup and optimization and other fancy tricks
