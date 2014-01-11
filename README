@@ -9,14 +9,15 @@ Toggle button for automatic aspect switching while moving
 Automatic misdirect to focus or pet when target's threat is above a certain threshold
 Several of the concepts and routines from rootWind were incorporated into these rotations
 Multitarget mode will only engage AOE abilities when both the multitarget toggle is set and there are at least 3 active enemies
-Automatic tranq shot when the enemy is enraged/dispellable
+Automatic tranq shot when the enemy is enraged/dispellable and not a charmed player
 Automatic Master's Call when the player is rooted
 Pause rotation when in feign death
 Delayed interrupting: Don't attempt to interrupt until the spellcast is 50% complete
-Toggle to allow for automatic serpet sting on your current mouseover target whenever that target doesn't already have the serpent sting DOT/debuff
-Support for internatrional clients as all references are by spellID/itemID
-Revie Pet & Call Pet should work correctly 100% of the time
+Toggle to allow for automatic serpent sting on your current mouseover target whenever that target doesn't already have the serpent sting DOT/debuff
+Support for international clients as all references are by spellID/itemID
+Revive Pet & Call Pet should work correctly 100% of the time
 When OOC will automatically cast Hunter's mark on your target if it's been targetted at least 2 seconds
+Will not cast Serpent Sting or Black Arrow against a charmed player in order to prevent DOTS from killing them
 
 
 Hotkeys:

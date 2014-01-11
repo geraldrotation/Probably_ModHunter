@@ -91,7 +91,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    -- Single
    { "1978", { "!target.debuff(118253)", "target.ttd >= 10", "!target.state.charm" }}, -- Serpent Sting if SS debuff is not present
    { "77767", "target.debuff(118253).duration < 4" }, -- Cobra Shot if SS duration < 4 secs
-   { "117051" }, -- Glaive Toss
+   { "117050" }, -- Glaive Toss
    { "109259" }, -- Power Shot
    { "3044", { "player.buff(34720)", "player.focus >= 40" }}, -- AS if ToTH buff is up focus is >= 40
    { "3044", "player.focus >= 60"}, -- Arcane Shot if focus >= 60
