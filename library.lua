@@ -1,6 +1,6 @@
 local modHunter = { }
-local modHunter.HMDelay = nil
-local modHunter.HMTargetGUID = nil
+modHunter.HMDelay = nil
+modHunter.HMTargetGUID = nil
 
 modHunter.eventHandler = function(self, ...)
   local subEvent                = select(1, ...)
@@ -55,7 +55,7 @@ function modHunter.HuntersMark()
       modHunter.HMDelay = GetTime()
    end
    if modHunter.HMDelay then
-      if 3 < GetTime() - modHunter.HMDelay then
+      if 2 < GetTime() - modHunter.HMDelay then
          modHunter.HMDelay = nil
          return true
       end

@@ -16,6 +16,7 @@ Delayed interrupting: Don't attempt to interrupt until the spellcast is 50% comp
 Toggle to allow for automatic serpet sting on your current mouseover target whenever that target doesn't already have the serpent sting DOT/debuff
 Support for internatrional clients as all references are by spellID/itemID
 Revie Pet & Call Pet should work correctly 100% of the time
+When OOC will automatically cast Hunter's mark on your target if it's been targetted at least 2 seconds
 
 
 Hotkeys:
@@ -35,7 +36,6 @@ Basically following the Icy Veins suggested priority system
 
 To Do:
 Figure out how to share common blocks of code between the specializations so as to not duplicate code
-Automatic tranq shot when the enemy is enraged & not a player mind-controlled
 Implement G52 Landshark usage as part of cooldowns
 Figure out how to get Healing Potions & Virmen's Bite potions to work 100% when potions are already on cooldown
 More cleanup and optimization and other fancy tricks

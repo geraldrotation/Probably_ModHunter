@@ -27,7 +27,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    { "pause", "target.status.sleep" },
 
    -- Serpent Sting on mouseover when they don't have the debuff already and the toggle is enabled
-   { "1979", { "!mouseover.debuff(118253)", "toggle.autoSS", "mouseover.exists", "mouseover.enemy", "mouseover.alive", "!mouseover.state.charm" }, "mouseover" },
+   { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS", "!mouseover.state.charm" }, "mouseover" },
 
    -- Interrupt(s)
    { "147362", "target.interruptAt(50)" }, -- Counter Shot at 50% cast time left
