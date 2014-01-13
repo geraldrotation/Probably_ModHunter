@@ -76,7 +76,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    --}},
    { "34026", { "pet.exists", "@coreHunter.petInRange" }}, -- Kill Command
    { "3045" }, -- Rapid Fire
-   { "82692", { "player.buff(19615).count = 5", "!player.buff(34471)" }}, -- Focus Fire when at 5 stacks of frenzy and not under 'The Beast Within' buff from Beastial Wrath
+   { "82692", { "player.buff(Frenzy).count = 5", "!player.buff(34471)" }}, -- Focus Fire when at 5 stacks of frenzy and not under 'The Beast Within' buff from Beastial Wrath
    { "82726", "player.focus < 50" }, -- Fervor when under 50 focus
    { "19801", { "target.dispellable(19801)", "!target.state.charm" }, "target" }, -- Tranquilizing Shot
 
