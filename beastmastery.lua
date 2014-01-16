@@ -19,12 +19,12 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    { "109248" , "modifier.lcontrol", "ground" }, -- Binding Shot
 
    -- Pre DPS Pause
-   { "pause", "target.debuff(Wyvern Sting).any" },
-   { "pause", "target.debuff(Scatter Shot).any" },
-   { "pause", "target.immune.all" },
-   { "pause", "target.status.disorient" },
-   { "pause", "target.status.incapacitate" },
-   { "pause", "target.status.sleep" },
+   --{ "pause", "target.debuff(Wyvern Sting).any" },
+   --{ "pause", "target.debuff(Scatter Shot).any" },
+   --{ "pause", "target.immune.all" },
+   --{ "pause", "target.status.disorient" },
+   --{ "pause", "target.status.incapacitate" },
+   --{ "pause", "target.status.sleep" },
 
    -- Serpent Sting on mouseover when they don't have the debuff already and the toggle is enabled
    { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS", "!mouseover.state.charm" }, "mouseover" },
@@ -63,9 +63,6 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
       { "131894" }, -- A Murder of Crows
       { "120697" }, -- Lynx Rush
       { "53401" }, -- Rabid
-      { "16827" }, -- Claw
-      { "17253" }, -- Bite
-      { "49966" }, -- Smack
    }, "modifier.cooldowns" },
 
    -- Shared
