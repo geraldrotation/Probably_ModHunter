@@ -89,7 +89,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    }, { "modifier.multitarget", "modifier.enemies >= 3" }, },
 
    -- Single
-   { "1978", { "!target.debuff(118253)", "target.ttd >= 10", "!target.state.charm" }}, -- Serpent Sting if SS debuff is not present
+   { "1978", { "!target.debuff(118253)", "!target.state.charm" }}, -- Serpent Sting if SS debuff is not present
    { "77767", "target.debuff(118253).duration < 4" }, -- Cobra Shot if SS duration < 4 secs
    { "117050" }, -- Glaive Toss
    { "109259" }, -- Power Shot
