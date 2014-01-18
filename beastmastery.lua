@@ -55,7 +55,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    {{
       -- TODO: Verify that this actually works.  There appears to be a bug such that: When another item/potion is used that shares the same CD as a potion/item, that CD won't register correctly for whatever check PE does, and thus the checks to safeguard against using it over and over will fail, causing the rotation to break
       {{
-         { "#76089", "@modHunter.isHeroism()" },
+         --{ "#76089", "player.hashero" },
          --{ "#77589" }, -- G91 Landshark
          --{ "#77589", "@modHunter.Landshark()" }, -- G91 Landshark - borks rotation for some reason when it is on cooldown?
       }, "toggle.useItem" },

@@ -21,17 +21,6 @@ modHunter.eventHandler = function(self, ...)
   end
 end
 
-function modHunter.isHeroism()
-   -- Check for hero/bloodlust/etc
-   if (UnitBuff("player", 2825) or
-         UnitBuff("player", 32182) or
-         UnitBuff("player", 80353) or
-         UnitBuff("player", 90355)) then
-      return true
-   end
-   return false
-end
-
 function modHunter.checkShark(target)
   if GetItemCount(77589, false, false) > 0 then
     if not modHunter.items[77589] then return true end
