@@ -1,3 +1,7 @@
+ProbablyEngine.condition.register("petinmelee", function(target)
+   return (IsSpellInRange(GetSpellInfo(2649), target) == 1)
+end)
+
 local modHunter = { }
 modHunter.HMDelay = nil
 modHunter.HMTargetGUID = nil
@@ -50,5 +54,30 @@ function modHunter.HuntersMark()
       end
    end
 end
+
+function modHunter.useAgiPot()
+   -- 76089 = Virmen's Bite
+   if GetItemCount(76089) > 1
+     and GetItemCooldown(76089) == 0
+     and ProbablyEngine.condition["modifier.cooldowns"]
+     and (UnitBuff("player", 2825) or
+      UnitBuff("player", 32182) or
+      UnitBuff("player", 80353) or
+      UnitBuff("player", 90355)) then
+      return true
+   end
+   return false
+end
+
+function modHunter.useHealthPot()
+   -- 76098 = Master Health Potion
+   if GetItemCount(76097) > 1
+    and GetItemCooldown(76097) == 0
+    and ProbablyEngine.condition["modifier.cooldowns"] then
+      return true
+   end
+   return false
+end
+
 
 ProbablyEngine.library.register("modHunter", modHunter)
