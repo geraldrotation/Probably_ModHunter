@@ -19,15 +19,15 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    { "109248" , "modifier.lcontrol", "ground" }, -- Binding Shot
 
    -- Pre DPS Pause
-   --{ "pause", "target.debuff(Wyvern Sting).any" },
-   --{ "pause", "target.debuff(Scatter Shot).any" },
-   --{ "pause", "target.immune.all" },
-   --{ "pause", "target.status.disorient" },
-   --{ "pause", "target.status.incapacitate" },
-   --{ "pause", "target.status.sleep" },
+   { "pause", "target.debuff(19386).any" },
+   { "pause", "target.debuff(19504).any" },
+   { "pause", "target.immune.all" },
+   { "pause", "target.status.disorient" },
+   { "pause", "target.status.incapacitate" },
+   { "pause", "target.status.sleep" },
 
    -- Serpent Sting on mouseover when they don't have the debuff already and the toggle is enabled
-   { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS", "!mouseover.state.charm" }, "mouseover" },
+   { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS", "!mouseover.state.charmed" }, "mouseover" },
 
    -- Interrupt(s)
    { "147362", "target.interruptAt(50)" }, -- Counter Shot at 50% cast time left
@@ -55,9 +55,8 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    {{
       -- TODO: Verify that this actually works.  There appears to be a bug such that: When another item/potion is used that shares the same CD as a potion/item, that CD won't register correctly for whatever check PE does, and thus the checks to safeguard against using it over and over will fail, causing the rotation to break
       {{
-         --{ "#76089", "player.hashero" },
-         { "#76089", "@modHunter.useAgiPot" },
-         --{ "#77589" }, -- G91 Landshark
+         { "#76089", "player.hashero" },
+         --{ "#76089", "@modHunter.useAgiPot" },
          --{ "#77589", "@modHunter.Landshark()" }, -- G91 Landshark - borks rotation for some reason when it is on cooldown?
       }, "toggle.useItem" },
       { "121818" }, -- Stampede
@@ -79,7 +78,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    { "3045" }, -- Rapid Fire
    { "82692", { "player.buff(Frenzy).count = 5", "!player.buff(34471)" }}, -- Focus Fire when at 5 stacks of frenzy and not under 'The Beast Within' buff from Beastial Wrath
    { "82726", "player.focus < 50" }, -- Fervor when under 50 focus
-   { "19801", { "target.dispellable(19801)", "!target.state.charm" }, "target" }, -- Tranquilizing Shot
+   { "19801", { "target.dispellable(19801)", "!target.state.charmed" }, "target" }, -- Tranquilizing Shot
 
    -- AoE
    {{
@@ -90,7 +89,7 @@ ProbablyEngine.rotation.register_custom(253, "ModHunter_BM",
    }, { "modifier.multitarget", "modifier.enemies >= 3" }, },
 
    -- Single
-   { "1978", { "!target.debuff(118253)", "!target.state.charm" }}, -- Serpent Sting if SS debuff is not present
+   { "1978", { "!target.debuff(118253)", "!target.state.charmed" }}, -- Serpent Sting if SS debuff is not present
    { "77767", "target.debuff(118253).duration < 4" }, -- Cobra Shot if SS duration < 4 secs
    { "117050" }, -- Glaive Toss
    { "109259" }, -- Power Shot
