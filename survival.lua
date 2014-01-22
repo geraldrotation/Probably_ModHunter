@@ -18,14 +18,6 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
 
    { "109248" , "modifier.lcontrol", "ground" }, -- Binding Shot
 
-   -- Pre DPS Pause
-   { "pause", "target.debuff(19386).any" },
-   { "pause", "target.debuff(19504).any" },
-   { "pause", "target.immune.all" },
-   { "pause", "target.status.disorient" },
-   { "pause", "target.status.incapacitate" },
-   { "pause", "target.status.sleep" },
-
    -- Serpent Sting on mouseover when they don't have the debuff already and the toggle is enabled
    { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS", "!mouseover.state.charmed" }, "mouseover" },
 
@@ -55,7 +47,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    {{
       -- TODO: Verify that this actually works.  There appears to be a bug such that: When another item/potion is used that shares the same CD as a potion/item, that CD won't register correctly for whatever check PE does, and thus the checks to safeguard against using it over and over will fail, causing the rotation to break
       {{
-         { "#76089", "player.hashero" },
+         --{ "#76089", "player.hashero" },
          --{ "#76089", "@modHunter.useAgiPot" },
          --{ "#77589", "@modHunter.Landshark()" }, -- G91 Landshark - borks rotation for some reason when it is on cooldown?
       }, "toggle.useItem" },
