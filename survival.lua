@@ -19,7 +19,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    { "109248" , "modifier.lcontrol", "ground" }, -- Binding Shot
 
    -- Serpent Sting on mouseover when they don't have the debuff already and the toggle is enabled
-   { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS", "!mouseover.state.charmed" }, "mouseover" },
+   { "1978", { "!mouseover.debuff(118253)", "toggle.autoSS", "!mouseover.charmed" }, "mouseover" },
 
    -- Interrupt(s)
    { "147362", "target.interruptAt(50)" }, -- Counter Shot at 50% cast time left
@@ -30,7 +30,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    {{
       { "#5512", "player.health < 40" }, -- Healthstone
       -- This is still broken if the potion is on cooldown
-      --{ "#76097", "player.health < 40" }, -- Master Healing Potion
+      { "#76097", "player.health < 40" }, -- Master Healing Potion
    }, "toggle.useItem" },
    { "136", { "pet.health <= 75", "pet.exists", "!pet.dead", "!pet.buff(136)" }}, -- Mend Pet
    -- Misdirect to focus target or pet when threat is above a certain threshhold
@@ -64,7 +64,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    { "3045" }, -- Rapid Fire
    { "120679" }, -- Dire Beast
    { "82726", "player.focus < 50" }, -- Fervor when under 50 focus
-   { "19801", { "target.dispellable(19801)", "!target.state.charmed" }, "target" }, -- Tranquilizing Shot
+   { "19801", { "target.dispellable(19801)", "!target.charmed" }, "target" }, -- Tranquilizing Shot
 
    -- AoE
    {{
@@ -75,8 +75,8 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    }, { "modifier.multitarget", "modifier.enemies >= 3" }, },
 
    -- Single
-   { "1978", { "!target.debuff(118253)", "!target.state.charmed" }}, -- Serpent Sting if SS debuff is not present
-   { "3674", { "!target.debuff(3674)", "!target.state.charmed"  }}, -- Black Arrow
+   { "1978", { "!target.debuff(118253)", "!target.charmed" }}, -- Serpent Sting if SS debuff is not present
+   { "3674", { "!target.debuff(3674)", "!target.charmed"  }}, -- Black Arrow
    { "77767", "target.debuff(118253).duration < 4" }, -- Cobra Shot if SS duration < 4 secs
    { "53301" }, -- Explosive Shot
    { "117050" }, -- Glaive Toss
