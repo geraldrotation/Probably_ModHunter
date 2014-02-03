@@ -60,7 +60,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    -- Shared
    { "#gloves", "toggle.useItem" },
    { "53351", "target.health <= 20" }, -- Kill Shot
-   { "53301", "player.buff(56453)" }, -- Explosive shot if LnL buff is up
+   { "53301", { "player.buff(56453)", "!target.charmed" }}, -- Explosive shot if LnL buff is up
    { "3045" }, -- Rapid Fire
    { "120679" }, -- Dire Beast
    { "82726", "player.focus < 50" }, -- Fervor when under 50 focus
@@ -78,7 +78,7 @@ ProbablyEngine.rotation.register_custom(255, "ModHunter_SV",
    { "1978", { "!target.debuff(118253)", "!target.charmed" }}, -- Serpent Sting if SS debuff is not present
    { "3674", { "!target.debuff(3674)", "!target.charmed"  }}, -- Black Arrow
    { "77767", "target.debuff(118253).duration < 4" }, -- Cobra Shot if SS duration < 4 secs
-   { "53301" }, -- Explosive Shot
+   { "53301", "!target.charmed" }, -- Explosive Shot
    { "117050" }, -- Glaive Toss
    { "109259" }, -- Power Shot
    { "3044", { "player.buff(34720)", "player.focus >= 40" }}, -- AS if ToTH buff is up focus is >= 40
